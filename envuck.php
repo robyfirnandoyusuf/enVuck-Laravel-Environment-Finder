@@ -43,7 +43,7 @@ class envuck
 		curl_setopt($ch, CURLOPT_URL, self::$_site.$env);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		// curl_setopt($ch, CURLOPT_HEADER, true);
-		curl_setopt($ch, CURLOPT_HTTPHEADER, array("REMOTE_ADDR: ", "HTTP_X_FORWARDED_FOR: 203.124.53.17"));
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array("REMOTE_ADDR: ", "HTTP_X_FORWARDED_FOR: 203.124.53.17"));//change this, if ur IP blocked by server
 		curl_setopt($ch, CURLOPT_ENCODING, 'gzip, deflate');
 		
 		$result 	= curl_exec($ch);
