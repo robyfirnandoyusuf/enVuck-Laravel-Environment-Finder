@@ -1,3 +1,4 @@
+.env
 vendor/.env 
 lib/.env 
 lab/.env  
@@ -19,7 +20,6 @@ admin/.env
 web/.env 
 public/.env 
 en/.env 
-.env
 tools/.env 
 v1/.env 
 administrator/.env 
