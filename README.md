@@ -1,4 +1,4 @@
-# enVuck-Laravel-Environment-Finder
+# enVuck Laravel Environment Finder
 ### USAGE
 > LINUX
 - fill target.txt with your target sites
