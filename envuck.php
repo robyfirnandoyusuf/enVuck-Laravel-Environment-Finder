@@ -118,27 +118,35 @@ class envuck
 			exit("File Not Found\n");
 		}
 
+		$arrOK = [];
 		foreach (file("target.txt") as $site) 
 		{
 			envuck::$_site = trim($site);
-			envuck::bruteENV();
+			$arrOK[] = envuck::bruteENV();
 			continue;
 		}
 
-		echo "Are you sure you want to save found env ?  y or n ";
-		$handle = fopen ("php://stdin","r");
-		$line = fgets($handle);
-		
-		if(trim($line) != 'y')
+		if (!empty($arrOK)) 
 		{
-		    exit;
+			echo "Are you sure you want to save found env ?  y or n ";
+			$handle = fopen ("php://stdin","r");
+			$line = fgets($handle);
+			
+			if(trim($line) != 'y')
+			{
+			    exit;
+			}
+			fclose($handle);
+
+			envuck::saveData(envuck::$arrData);
+
+			echo "\n"; 
+			echo "Saved ! ...\n";
 		}
-		fclose($handle);
-
-		envuck::saveData(envuck::$arrData);
-
-		echo "\n"; 
-		echo "Saved ! ...\n";
+		else
+		{
+			echo "Nothing Found .env file :(";
+		}
 	}
 }	
 

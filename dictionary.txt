@@ -1,4 +1,7 @@
 .env
+../.env
+../../.env
+../../../.env
 vendor/.env 
 lib/.env 
 lab/.env  
